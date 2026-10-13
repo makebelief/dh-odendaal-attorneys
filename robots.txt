@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+# Independent demonstration. Obtain firm authorisation before enabling search indexing.
