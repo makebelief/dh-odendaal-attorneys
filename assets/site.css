@@ -66,29 +66,6 @@
 .intro-picture>img{object-fit:cover;object-position:center 24%;}
 .profile-photo>img{object-fit:cover;object-position:center 39%;}
 
-/* J Motseo Inc. monochrome brand refinements */
-.topbar{background:#111318}.topbar svg{color:#c5c9cd}
-.btn-gold{background:#16191e;border-color:#16191e;color:#fff}.btn-gold:hover{background:#3b424b;border-color:#3b424b}
-.hero .btn-gold{background:#f4f5f6;color:#111317;border-color:#f4f5f6}.hero .btn-gold:hover{background:#d7dbdf;border-color:#d7dbdf}
-.hero::before{background-image:linear-gradient(90deg,rgba(9,11,15,.97) 0%,rgba(9,11,15,.93) 32%,rgba(9,11,15,.67) 58%,rgba(9,11,15,.14) 100%),var(--hero-image)}
-.nav-shell{box-shadow:0 2px 20px rgba(20,20,20,.05)}
-.brand{flex-basis:222px;width:222px}.brand img{width:222px;max-height:85px}
-.footer-logo img{max-width:250px;width:100%;height:auto;object-fit:contain}
-.intro-picture>img,.decorative-photo img,.detail-photo img,.insight-image img,.profile-photo img{display:block;max-width:100%;width:100%;height:100%;object-fit:cover;object-position:center;}
-.intro-picture>img{aspect-ratio:1/1;object-position:center 17%}
-.detail-photo,.decorative-photo,.profile-photo{overflow:hidden}
-.detail-photo img{aspect-ratio:1 / .9}
-.profile-photo img{object-position:center top;}
-.insight-image img{aspect-ratio:1.36/1;object-fit:cover}
-.picture-stamp{background:#191c20}.picture-stamp small{color:#e1e3e7}
-.eyebrow-light,.hero h1 em{color:#e7e9ec}
-.practice-card{background:#171b20}
-.floating-whatsapp{background:#118b54 !important;border:0 !important;box-shadow:0 10px 25px rgba(0,0,0,.17) !important}
-.floating-whatsapp svg{fill:#fff !important;color:#fff !important}
-.contact-details a{overflow-wrap:anywhere}
-@media(max-width:950px){.brand,.brand img{max-width:200px;width:200px;flex-basis:auto}}
-@media(max-width:600px){.hero::before{background-image:linear-gradient(90deg,rgba(9,11,15,.88),rgba(9,11,15,.72)),var(--hero-image);background-position:center}.brand,.brand img{max-width:160px;width:160px}.intro-picture>img{aspect-ratio:4 / 4.3}}
-
 /* DH Odendaal: black and antique-gold palette taken from the supplied firm artwork. */
 :root{--navy:#111113;--navy-deep:#080809;--navy-soft:#2b2a2b;--gold:#b28a37;--gold-light:#f0d79a;--red:#ac842e;--ink:#171616;--body:#58575a;--line:#e7e3da;--cream:#f7f5f0;--white:#fff;--shadow:0 24px 60px rgba(21,18,8,.13)}
 body{color:var(--ink)}.topbar{background:#101012;color:#f4ead8}.nav-shell{background:#fff}.nav-link.active,.text-link,.eyebrow,.card-number{color:#a47b2e}.nav-link:after,.accent-line{background:#b68c36}
@@ -108,3 +85,30 @@ body{color:var(--ink)}.topbar{background:#101012;color:#f4ead8}.nav-shell{backgr
 @media(max-width:1100px){.brand{flex:0 0 185px;width:185px}}
 @media(max-width:767px){.brand{flex:0 0 175px;width:175px}.brand img{height:78px;max-height:78px}.map-frame iframe{height:330px}.hero::before{background-image:linear-gradient(90deg,rgba(9,9,11,.95),rgba(10,10,10,.7)),var(--hero-image)!important;background-position:58% center!important}}
 @media(max-width:380px){.brand{flex:0 0 156px;width:156px}.brand img{height:68px;max-height:68px}}
+
+/* DH Odendaal mobile consistency release — same navigation, cards and floating
+   WhatsApp pattern as the other Wakili wa Tech law-firm demo websites. */
+@media (max-width: 950px) {
+  .nav-shell { position: sticky; top: 0; z-index: 80; background: #fff; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+  .nav-links, .nav-cta { display: none !important; }
+  .menu-open { display: inline-flex; align-items: center; justify-content: center; margin-left: auto; }
+  .mobile-panel { background: #fff; z-index: 91; }
+  .mobile-backdrop { z-index: 89; }
+}
+@media (max-width: 767px) {
+  /* Cards remain within their containers: no tall fixed-height mobile tiles. */
+  .value-grid, .values-grid { grid-template-columns: minmax(0,1fr); }
+  .value-grid > div, .values-grid > div { min-width: 0; }
+  .practice-grid, .insight-grid { grid-template-columns: minmax(0,1fr); }
+  .hero-actions .btn { max-width: 100%; }
+  .intro-grid, .two-column, .contact-layout { grid-template-columns: minmax(0,1fr); }
+  .intro-picture > img, .profile-photo img { max-width: 100%; }
+  /* One circular floating WhatsApp button; no full-width bottom CTA bar. */
+  a.floating-whatsapp {
+    position: fixed !important; right: 16px !important; bottom: 18px !important;
+    width: 56px !important; height: 56px !important; border-radius: 50% !important;
+    padding: 0 !important; z-index: 100 !important;
+  }
+  a.floating-whatsapp > svg { width: 28px !important; height: 28px !important; }
+}

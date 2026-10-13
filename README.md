@@ -30,3 +30,15 @@ Confirm correct spelling and contact details, director's biography, published se
 
 - https://www.attorneys.co.za/ResultsPage.asp?AreaID=134&LanguageID=-1&RegionID=14&sMode=C
 - https://www.findglocal.com/ZA/Vanderbijlpark/1493271-15
+
+
+## Mobile design consistency update (13 October 2026)
+This build retains the same law-firm template used for the other websites:
+responsive white navigation, standard mobile menu, image-led homepage, correctly
+cropped photographs and **one circular floating WhatsApp icon**.
+
+A screenshot supplied for comparison displayed the address `attorneys.vercel.app`,
+which is *not* the domain linked to the DH Odendaal project in the connected
+Vercel account. That screenshot's EN/AF toggle and fixed bottom Call/WhatsApp
+bar do not exist in this codebase. If those elements still appear after deploying
+this release, check the exact hostname and Vercel project being viewed.
